@@ -1,7 +1,16 @@
 {
-    "@@locale": "es",
-    "counterAppBarTitle": "Contador",
-    "@counterAppBarTitle": {
-        "description": "Texto mostrado en la AppBar de la página del contador"
-    }
+  "@@locale": "es",
+  "homePageTitle": "Mars Rover Mission",
+  "homePageStep1": "Paso 1",
+  "homePageStep2": "Paso 2",
+  "homePageStep3": "Paso 3",
+  "homePageStep4": "Paso 4",
+  "homePageStep5": "Paso 5",
+  "homePageStep1Text": "Gracias a esta aplicación podrás enviarle instrucciones a nuestra nave rastreadora situada en el planeta Marte.",
+  "homePageStep2Text": "Debido a que la comunicación es complicada y el planeta es extraño, con posibles obstáculos sobre el terreno, la nave rastreadora siempre empezará desde la posición central.",
+  "homePageStep3Text": "Los movimientos permitidos serán: adelante(F), izquierda(L) y derecha(R), con un máximo de nueve movimientos.",
+  "homePageStep4Text": "Si la nave se encuentra algún obstáculo, se moverá a la siguiente casilla disponible y se cancelará el proceso.",
+  "homePageStep5Text": "Instrucciones",
+  "homePageStep5TextButton": "Enviar",
+  "homePageInstructionError": "La instrucción no es válida"
 }

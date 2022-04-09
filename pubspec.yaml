@@ -1,5 +1,5 @@
 name: belts_test
-description: A Very Good Project created by Very Good CLI.
+description: This project is a technical test for 8belts.
 version: 1.0.0+1
 publish_to: none
 
@@ -8,6 +8,7 @@ environment:
 
 dependencies:
   bloc: ^8.0.3
+  equatable: ^2.0.3
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
@@ -25,3 +26,12 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true
+  assets:
+    - assets/images/
+  fonts:
+    - family: DancingScript
+      fonts:
+        - asset: assets/fonts/DancingScript-Regular.ttf
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
