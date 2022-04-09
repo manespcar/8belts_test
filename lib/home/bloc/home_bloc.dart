@@ -14,13 +14,17 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   }
 
   void _mapNextStepStepperToState(
-      NextStepStepper event, Emitter<HomeState> emit) {
+    NextStepStepper event,
+    Emitter<HomeState> emit,
+  ) {
     final newIndex = state.index + 1;
     emit(state.copyWith(index: newIndex));
   }
 
   void _mapBackStepStepperToState(
-      BackStepStepper event, Emitter<HomeState> emit) {
+    BackStepStepper event,
+    Emitter<HomeState> emit,
+  ) {
     final newIndex = state.index - 1;
     emit(state.copyWith(index: newIndex));
   }
@@ -31,17 +35,19 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   }
 
   void _mapOnChangeInstructionToState(
-      OnChangeInstruction event, Emitter<HomeState> emit) {
+    OnChangeInstruction event,
+    Emitter<HomeState> emit,
+  ) {
     final newInstruction = event.value;
     emit(state.copyWith(instruction: newInstruction));
   }
 
   void _mapSendInstructionsToState(
-      SendInstructions event, Emitter<HomeState> emit) {
+    SendInstructions event,
+    Emitter<HomeState> emit,
+  ) {
     final validCharacters = RegExp(r'^[lLrRfF]+$');
     if (validCharacters.hasMatch(state.instruction)) {
-      print('Siiii valid');
-      //emit(state.copyWith(status: HomeStateEnum.success));
     } else {
       emit(state.copyWith(status: HomeStateEnum.failure));
     }
