@@ -66,10 +66,10 @@ void main() {
           create: (_) => _mock,
           child: const MarsFloorWidget(),
         ),
-          );
+      );
 
-          expect(find.byType(MarsFloorWidget), findsOneWidget);
-        });
+      expect(find.byType(MarsFloorWidget), findsOneWidget);
+    });
 
     testWidgets('renders MarsFloorWidget when status is scanFinished',
         (tester) async {
