@@ -1,0 +1,12 @@
+const int maxRows = 9;
+const int maxColumns = 9;
+const int maxStones = 5;
+const double maxSizeRover = 30;
+const double maxSizeFloor = 400;
+const int startPositionX = 8;
+const int startPositionY = 4;
+const String forward = 'F';
+const String left = 'L';
+const String right = 'R';
+const double offsetX = 44;
+const double offsetY = 41;

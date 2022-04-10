@@ -47,7 +47,7 @@ To view the generated coverage report you can use [lcov](https://github.com/linu
 
 ```sh
 # Generate Coverage Report
-$ genhtml coverage/lcov.info -o coverage/
+$ genhtml coverage/lcov.info -o coverage/html
 
 # Open Coverage Report
 $ open coverage/index.html

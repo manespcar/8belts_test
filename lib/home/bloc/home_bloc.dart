@@ -39,7 +39,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     Emitter<HomeState> emit,
   ) {
     final newInstruction = event.value;
-    emit(state.copyWith(instruction: newInstruction));
+    emit(
+      state.copyWith(
+        instruction: newInstruction,
+        status: HomeStateEnum.initial,
+      ),
+    );
   }
 
   void _mapSendInstructionsToState(
@@ -48,6 +53,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   ) {
     final validCharacters = RegExp(r'^[lLrRfF]+$');
     if (validCharacters.hasMatch(state.instruction)) {
+      emit(state.copyWith(status: HomeStateEnum.success));
     } else {
       emit(state.copyWith(status: HomeStateEnum.failure));
     }

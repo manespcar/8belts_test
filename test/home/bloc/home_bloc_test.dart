@@ -38,5 +38,31 @@ void main() {
       act: (bloc) => bloc.add(OnChangeInstruction('FRLF')),
       expect: () => [const HomeState(instruction: 'FRLF')],
     );
+
+    blocTest<HomeBloc, HomeState>(
+      'should emits failure if the instruction is not valid',
+      build: HomeBloc.new,
+      seed: () => const HomeState().copyWith(instruction: 'FLRHE'),
+      act: (bloc) => bloc.add(SendInstructions()),
+      expect: () => [
+        const HomeState(
+          instruction: 'FLRHE',
+          status: HomeStateEnum.failure,
+        )
+      ],
+    );
+
+    blocTest<HomeBloc, HomeState>(
+      'should emits success if the instruction is valid',
+      build: HomeBloc.new,
+      seed: () => const HomeState().copyWith(instruction: 'FLRFFL'),
+      act: (bloc) => bloc.add(SendInstructions()),
+      expect: () => [
+        const HomeState(
+          instruction: 'FLRFFL',
+          status: HomeStateEnum.success,
+        )
+      ],
+    );
   });
 }

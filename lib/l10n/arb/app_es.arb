@@ -9,8 +9,14 @@
   "homePageStep1Text": "Gracias a esta aplicación podrás enviarle instrucciones a nuestra nave rastreadora situada en el planeta Marte.",
   "homePageStep2Text": "Debido a que la comunicación es complicada y el planeta es extraño, con posibles obstáculos sobre el terreno, la nave rastreadora siempre empezará desde la posición central.",
   "homePageStep3Text": "Los movimientos permitidos serán: adelante(F), izquierda(L) y derecha(R), con un máximo de nueve movimientos.",
-  "homePageStep4Text": "Si la nave se encuentra algún obstáculo, se moverá a la siguiente casilla disponible y se cancelará el proceso.",
+  "homePageStep4Text": "Si la nave se encuentra algún obstáculo, se moverá a la siguiente casilla anterior y se cancelará el proceso.",
   "homePageStep5Text": "Instrucciones",
   "homePageStep5TextButton": "Enviar",
-  "homePageInstructionError": "La instrucción no es válida"
+  "homePageInstructionError": "La instrucción no es válida",
+  "marsFloorPageScanningFloor": "Escaneando el terreno...",
+  "marsFloorPageStartButton": "Comenzar",
+  "marsFloorPageBackButton": "Volver",
+  "marsFloorPageAbortedText": "Misión abortada, la nave encontró un obstáculo en la posición {0}",
+  "marsFloorPageSuccessText": "Misión completada, la nave ha completado su recorrido",
+  "marsFloorPageOutOfLimitsText": "Fuera de los límites! La nave no puede continuar"
 }

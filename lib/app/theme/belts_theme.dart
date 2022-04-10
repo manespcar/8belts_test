@@ -45,6 +45,11 @@ class BeltsTheme {
           fontFamily: 'Roboto',
           fontSize: 20,
         ),
+        subtitle2: TextStyle(
+          color: Colors.white,
+          fontFamily: 'Roboto',
+          fontSize: 12,
+        ),
         labelMedium: TextStyle(
           color: Colors.black45,
           fontFamily: 'Roboto',

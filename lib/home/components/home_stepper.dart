@@ -3,6 +3,7 @@ import 'package:belts_test/home/bloc/home_bloc.dart';
 import 'package:belts_test/home/components/custom_textfield_widget.dart';
 import 'package:belts_test/home/components/step_button.dart';
 import 'package:belts_test/l10n/l10n.dart';
+import 'package:belts_test/mars_floor/mars_floor_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,6 +18,15 @@ class HomeStepper extends StatelessWidget {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               content: Text(context.l10n.homePageInstructionError),
+            ),
+          );
+        } else if (state.status.isSuccess) {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute<void>(
+              builder: (context) => MarsFloorPage(
+                instruction: state.instruction,
+              ),
             ),
           );
         }
