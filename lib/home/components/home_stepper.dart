@@ -3,9 +3,9 @@ import 'package:belts_test/home/bloc/home_bloc.dart';
 import 'package:belts_test/home/components/custom_textfield_widget.dart';
 import 'package:belts_test/home/components/step_button.dart';
 import 'package:belts_test/l10n/l10n.dart';
-import 'package:belts_test/mars_floor/mars_floor_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeStepper extends StatelessWidget {
   const HomeStepper({Key? key}) : super(key: key);
@@ -13,7 +13,7 @@ class HomeStepper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<HomeBloc, HomeState>(
-      listener: (context, state) {
+      listener: (_context, state) {
         if (state.status.isFailure) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
@@ -21,14 +21,7 @@ class HomeStepper extends StatelessWidget {
             ),
           );
         } else if (state.status.isSuccess) {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute<void>(
-              builder: (context) => MarsFloorPage(
-                instruction: state.instruction,
-              ),
-            ),
-          );
+          GoRouter.of(context).go('/mars_floor/${state.instruction}');
         }
       },
       builder: (context, state) {

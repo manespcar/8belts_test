@@ -1,5 +1,4 @@
 import 'package:belts_test/app/theme/belts_theme.dart';
-import 'package:belts_test/home/home_page.dart';
 import 'package:belts_test/l10n/l10n.dart';
 import 'package:belts_test/mars_floor/bloc/mars_floor_bloc.dart';
 import 'package:belts_test/mars_floor/components/floor_widget.dart';
@@ -8,6 +7,7 @@ import 'package:belts_test/mars_floor/components/rover_widget.dart';
 import 'package:belts_test/mars_floor/components/scan_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class MarsFloorWidget extends StatelessWidget {
   const MarsFloorWidget({Key? key}) : super(key: key);
@@ -59,13 +59,7 @@ class MarsFloorWidget extends StatelessWidget {
                               : state.status.isAborted ||
                                       state.status.isFinished ||
                                       state.status.isOutOfLimits
-                                  ? () => Navigator.pushReplacement(
-                                        context,
-                                        MaterialPageRoute<void>(
-                                          builder: (context) =>
-                                              const HomePage(),
-                                        ),
-                                      )
+                                  ? () => GoRouter.of(context).go('/')
                                   : null,
                           child: Text(
                             state.status.isAborted ||

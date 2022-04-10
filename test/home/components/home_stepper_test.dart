@@ -1,15 +1,13 @@
 import 'package:belts_test/home/bloc/home_bloc.dart';
 import 'package:belts_test/home/components/home_stepper.dart';
-import 'package:belts_test/mars_floor/bloc/mars_floor_bloc.dart';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../helpers/helpers.dart';
-
-class MockNavigatorObserver extends Mock implements NavigatorObserver {}
 
 class MockHomeBloc extends MockBloc<HomeEvent, HomeState> implements HomeBloc {}
 
@@ -17,29 +15,20 @@ class FakeHomeState extends Fake implements HomeState {}
 
 class FakeHomeEvent extends Fake implements HomeEvent {}
 
-class MockMarsFloorBloc extends MockBloc<MarsFloorEvent, MarsFloorState>
-    implements MarsFloorBloc {}
-
-class FakeMarsFloorState extends Fake implements MarsFloorState {}
-
-class FakeMarsFloorEvent extends Fake implements MarsFloorEvent {}
+class MockGoRouter extends Mock implements GoRouter {}
 
 void main() {
   late MockHomeBloc _mock;
-  late MockMarsFloorBloc _mockMars;
-  late MockNavigatorObserver _mockObserver;
+  late GoRouter _mockRoute;
 
   setUp(() {
     _mock = MockHomeBloc();
-    _mockMars = MockMarsFloorBloc();
-    _mockObserver = MockNavigatorObserver();
+    _mockRoute = MockGoRouter();
   });
 
   setUpAll(() {
     registerFallbackValue(FakeHomeEvent());
     registerFallbackValue(FakeHomeState());
-    registerFallbackValue(FakeMarsFloorEvent());
-    registerFallbackValue(FakeMarsFloorState());
   });
 
   group('HomeStepper', () {
@@ -189,7 +178,7 @@ void main() {
       expect(find.text('The instruction is not valid'), findsOneWidget);
     });
 
-    /*testWidgets('should navigate to other page when the instruction is valid',
+    testWidgets('should navigate to other page when the instruction is valid',
         (tester) async {
       when(() => _mock.state).thenReturn(
         const HomeState().copyWith(
@@ -209,31 +198,18 @@ void main() {
         ),
       );
 
-      await tester.pumpWidget(
-        MaterialApp(
-          localizationsDelegates: const [
-            AppLocalizations.delegate,
-            GlobalMaterialLocalizations.delegate,
-          ],
-          supportedLocales: AppLocalizations.supportedLocales,
-          locale: const Locale('en'),
-          navigatorObservers: [_mockObserver],
-          home: MultiBlocProvider(
-            providers: [
-              BlocProvider<HomeBloc>(
-                create: (_) => _mock,
-              ),
-              BlocProvider<MarsFloorBloc>(
-                create: (_) => _mockMars,
-              ),
-            ],
-            child: const Scaffold(body: HomeStepper()),
+      await tester.pumpApp(
+        InheritedGoRouter(
+          goRouter: _mockRoute,
+          child: BlocProvider<HomeBloc>(
+            create: (_) => _mock,
+            child: const HomeStepper(),
           ),
-          //routes: {'mars_floor': (_) => const MarsFloorPage(instruction: '')},
         ),
       );
 
-      expect(find.byType(MarsFloorPage), findsOneWidget);
-    });*/
+      await tester.pumpAndSettle();
+      verify(() => _mockRoute.go('/mars_floor/FRLLFR')).called(1);
+    });
   });
 }
