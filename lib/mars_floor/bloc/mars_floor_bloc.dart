@@ -8,7 +8,6 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
 part 'mars_floor_event.dart';
-
 part 'mars_floor_state.dart';
 
 class MarsFloorBloc extends Bloc<MarsFloorEvent, MarsFloorState> {
