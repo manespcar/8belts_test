@@ -20,7 +20,7 @@ on:
       flutter_version:
         required: false
         type: string
-        default: ""
+        default: "2.10.0"
       working_directory:
         required: false
         type: string
@@ -40,10 +40,6 @@ on:
 
 jobs:
   build:
-    defaults:
-      run:
-        working-directory: ${{inputs.working_directory}}
-
     runs-on: ubuntu-latest
 
     steps:
