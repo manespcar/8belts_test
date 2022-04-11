@@ -13,10 +13,15 @@
   "homePageStep5Text": "Instrucciones",
   "homePageStep5TextButton": "Enviar",
   "homePageInstructionError": "La instrucción no es válida",
+
   "marsFloorPageScanningFloor": "Escaneando el terreno...",
   "marsFloorPageStartButton": "Comenzar",
   "marsFloorPageBackButton": "Volver",
   "marsFloorPageAbortedText": "Misión abortada, la nave encontró un obstáculo en la posición {0}",
   "marsFloorPageSuccessText": "Misión completada, la nave ha completado su recorrido",
-  "marsFloorPageOutOfLimitsText": "Fuera de los límites! La nave no puede continuar"
+  "marsFloorPageOutOfLimitsText": "Fuera de los límites! La nave no puede continuar",
+
+  "notFoundPageTitle": "Página no encontrada",
+  "notValidInstructionPageTitle": "Instrucción no válida",
+  "notValidInstructionPageSubTitle": "La instrucción debe de contener solo F, L o R con una longitud máxima de nueve caracteres"
 }

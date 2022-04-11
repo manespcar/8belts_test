@@ -39,18 +39,13 @@ _\*Belts Test works on iOS, Android, Web, and Windows._
 
 To run all unit and widget tests use the following command:
 
-```sh
-$ flutter test --coverage --test-randomize-ordering-seed random
-```
-
-To view the generated coverage report you can use [lcov](https://github.com/linux-test-project/lcov).
+You need to have installed lcov to see the coverage (brew install lcov)
 
 ```sh
-# Generate Coverage Report
-$ genhtml coverage/lcov.info -o coverage/html
+$ sh run_tests-sh
 
 # Open Coverage Report
-$ open coverage/index.html
+$ open coverage/html/index.html
 ```
 
 ---

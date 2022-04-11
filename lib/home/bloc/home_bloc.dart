@@ -1,3 +1,4 @@
+import 'package:belts_test/helpers/utils.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
@@ -51,8 +52,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     SendInstructions event,
     Emitter<HomeState> emit,
   ) {
-    final validCharacters = RegExp(r'^[lLrRfF]+$');
-    if (validCharacters.hasMatch(state.instruction)) {
+    if (Utils.isInstructionIsValid(state.instruction)) {
       emit(state.copyWith(status: HomeStateEnum.success));
     } else {
       emit(state.copyWith(status: HomeStateEnum.failure));

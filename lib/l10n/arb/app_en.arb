@@ -13,10 +13,15 @@
   "homePageStep5Text": "Instructions",
   "homePageStep5TextButton": "Send",
   "homePageInstructionError": "The instruction is not valid",
+
   "marsFloorPageScanningFloor": "Scanning the floor...",
   "marsFloorPageStartButton": "Start",
   "marsFloorPageBackButton": "Back",
   "marsFloorPageAbortedText": "Mission aborted, the rover found an obstacle in the position {0}",
   "marsFloorPageSuccessText": "Mission completed, the rover has completed his route",
-  "marsFloorPageOutOfLimitsText": "Out of limits! The rover cannot continue"
+  "marsFloorPageOutOfLimitsText": "Out of limits! The rover cannot continue",
+
+  "notFoundPageTitle": "Not found",
+  "notValidInstructionPageTitle": "Not valid instruction",
+  "notValidInstructionPageSubTitle": "The instruction must contain only F, L or R with a maximum length of nine characters"
 }
