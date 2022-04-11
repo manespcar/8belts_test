@@ -42,7 +42,7 @@ To run all unit and widget tests use the following command:
 You need to have installed lcov to see the coverage (brew install lcov)
 
 ```sh
-$ sh run_tests-sh
+$ sh run_tests.sh
 
 # Open Coverage Report
 $ open coverage/html/index.html
