@@ -1,6 +1,6 @@
 name: Custom belts_test workflow
 
-on:
+on: [pull_request, push]
   workflow_call:
     inputs:
       coverage_excludes:
