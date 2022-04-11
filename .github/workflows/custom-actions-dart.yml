@@ -1,4 +1,4 @@
-name: Flutter Package Workflow
+name: Custom belts_test workflow
 
 on:
   workflow_call:
