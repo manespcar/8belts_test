@@ -7,7 +7,7 @@
   "homePageStep4": "Step 4",
   "homePageStep5": "Step 5",
   "homePageStep1Text": "Thanks to this application you will be able to send instructions to our tracking rover located on the planet Mars.",
-  "homePageStep2Text": "Because communication is complicated and the planet is strange, with possible obstacles on the ground, the tracker rover will always start from the center position.",
+  "homePageStep2Text": "Because communication is complicated and the planet is strange, with possible obstacles on the ground, the tracker rover will always start from the center position of the last row.",
   "homePageStep3Text": "The allowed movements will be: forward (F), left (L) and right (R), with a maximum of nine movements.",
   "homePageStep4Text": "If the rover encounters any obstacles, it will move to the back space and the process will be aborted.",
   "homePageStep5Text": "Instructions",
