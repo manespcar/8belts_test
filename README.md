@@ -31,7 +31,7 @@ $ flutter run --flavor staging --target lib/main_staging.dart
 $ flutter run --flavor production --target lib/main_production.dart
 ```
 
-_\*Belts Test works on iOS, Android, Web, and Windows._
+_\*Belts Test works on Web._
 
 ---
 
